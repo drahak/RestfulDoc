@@ -9,13 +9,13 @@
 		<!-- Resource header -->
 		<header ng-click="resource.show = !resource.show">
 			<pre class="path"><strong>{{resource.method}}</strong> {{resource.path}}</pre>
-			<h2><i class="icon-code muted"></i> {{resource.title}}</h2>
+			<div class="span1"><i class="icon-code muted icon-4x"></i></div>
+			<h3>{{resource.title}}</h3>
+			<p>{{resource.description}}</p>
 		</header>
 
 		<!-- Resource detail -->
 		<div class="resource-content" ng-class="{'shown': resource.show}">
-			<p>{{resource.description}}</p>
-
 			<div ng-show="resource.request.parameters.length || resource.request.headers.length">
 				<h3><i class="icon-angle-right"></i> Request</h3>
 				<dl>
