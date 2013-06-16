@@ -1,0 +1,6 @@
+<h2><i class="icon-code muted"></i> Resources</h2>
+<ul class="nav nav-stacked nav-tabs">
+	<li ng-repeat="(id, resource) in api.resources" ng-class="{'active': isCurrent('/resource/' + id)}" ng-cloak>
+		<a ng-href="#/resource/{{ id }}">{{ resource.name }} <span class="muted pull-right">{{ resource.source }}</span></a>
+	</li>
+</ul>

@@ -1,0 +1,215 @@
+/** LESS mixins */
+
+// Rounded corners
+.border-radius(@radius) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+}
+
+.border-radius() {
+	border-radius: none !important;
+	-moz-border-radius: none !important;
+	-webkit-border-radius: none !important;
+}
+
+.border-radius-top(@radius) {
+	-webkit-border-top-left-radius: @radius;
+	-webkit-border-top-right-radius: @radius;
+	-moz-border-radius-topleft: @radius;
+	-moz-border-radius-topright: @radius;
+	border-top-left-radius: @radius;
+	border-top-right-radius: @radius;
+}
+
+.border-radius-top-left(@radius) {
+	-webkit-border-top-left-radius: @radius;
+	-moz-border-radius-topleft: @radius;
+	border-top-left-radius: @radius;
+}
+
+.border-radius-top-right(@radius) {
+	-webkit-border-top-right-radius: @radius;
+	-moz-border-radius-topright: @radius;
+	border-top-right-radius: @radius;
+}
+
+.border-radius-bottom-left(@radius) {
+	-webkit-border-bottom-left-radius: @radius;
+	-moz-border-radius-bottomleft: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+.border-radius-bottom(@radius) {
+	-webkit-border-bottom-right-radius: @radius;
+	-webkit-border-bottom-left-radius: @radius;
+	-moz-border-radius-bottomright: @radius;
+	-moz-border-radius-bottomleft: @radius;
+	border-bottom-right-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+.border-radius-right(@radius) {
+	-webkit-border-top-right-radius: @radius;
+	-webkit-border-bottom-right-radius: @radius;
+	-moz-border-radius-topright: @radius;
+	-moz-border-radius-bottomright: @radius;
+	border-top-right-radius: @radius;
+	border-bottom-right-radius: @radius;
+}
+
+.border-radius-left(@radius) {
+	-webkit-border-top-left-radius: @radius;
+	-webkit-border-bottom-left-radius: @radius;
+	-moz-border-radius-topleft: @radius;
+	-moz-border-radius-bottomleft: @radius;
+	border-top-left-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+// Linear gradient from color1 to color2
+.linear-gradient (@color1, @color2) {
+	background: @color1;
+	background: -moz-linear-gradient(@color1, @color2); /** FF3.6+ */
+	background: -webkit-linear-gradient(@color1, @color2); /** Chrome,safari  */
+	background: -o-linear-gradient(@color1, @color2); /** Opera 11.10+ */
+	background: -ms-linear-gradient(@color1, @color2); /*For IE10*/
+	background: linear-gradient(@color1, @color2); /** W3C standard */
+}
+
+// Box shadow
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+	box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+}
+
+.box-shadow (@x, @y, @blur, @spread, @color) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+// Disable box shadow
+.box-shadow () {
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+// Inset box shadow
+.inset-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+	box-shadow: inset @arguments;
+	-moz-box-shadow: inset @arguments;
+	-webkit-box-shadow: inset @arguments;
+}
+
+.inset-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+	box-shadow: inset @arguments;
+	-moz-box-shadow: inset @arguments;
+	-webkit-box-shadow: inset @arguments;
+}
+
+// CSS3 transforms with easInOutBack
+.animate (@property: all, @duration: 300ms, easeInOutBack) {
+	-webkit-transition: @property @duration cubic-bezier(0.680, 0, 0.265, 1); /* older webkit */
+	-webkit-transition: @property @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	-moz-transition: @property @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	-ms-transition: @property @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	-o-transition: @property @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	transition: @property @duration cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
+
+	-webkit-transition-timing-function: cubic-bezier(0.680, 0, 0.265, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	-moz-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	-ms-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	-o-transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
+}
+
+// CSS3 transforms with easeInBack
+.animate (@property: all, @duration: 300ms, easeInBack) {
+	-webkit-transition: @property @duration cubic-bezier(0.600, 0, 0.735, 0.045); /* older webkit */
+	-webkit-transition: @property @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-moz-transition: @property @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-ms-transition: @property @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-o-transition: @property @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	transition: @property @duration cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */
+
+	-webkit-transition-timing-function: cubic-bezier(0.600, 0, 0.735, 0.045); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-moz-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-ms-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	-o-transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+	transition-timing-function: cubic-bezier(0.600, -0.280, 0.735, 0.045); /* easeInBack */
+}
+
+// CSS3 transforms with easeOutBack
+.animate (@property: all, @duration: 300ms, easeOutBack) {
+	-webkit-transition: @property @duration cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+	-webkit-transition: @property @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-moz-transition: @property @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-ms-transition: @property @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-o-transition: @property @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	transition: @property @duration cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+}
+
+// CSS3 transforms with native easing
+.animate (@property: all, @duration: 300ms, @easing: linear) {
+	-webkit-transition: @arguments;
+	-webkit-transition: @arguments;
+	-moz-transition: @arguments;
+	-ms-transition: @arguments;
+	-o-transition: @arguments;
+	transition: @arguments;
+}
+
+// Transforms
+.transform (@transform) {
+	-webkit-transform: @transform;
+	-moz-transform: @transform;
+	-ms-transform: @transform;
+	-o-transform: @transform;
+	transform: @transform;
+}
+
+// Set wrap
+.wrap () {
+	text-wrap: wrap;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	word-wrap: break-word;
+}
+
+.grayscale () {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+	filter: gray; /* IE6-9 */
+	-webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.filter (@val: none) {
+	-webkit-filter: @val;
+	filter: @val;
+}
+
+.box-sizing () {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;			/* Opera/IE 8+ */
+}
+
+.disable-select () {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

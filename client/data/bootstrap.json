@@ -1,0 +1,10 @@
+{
+	"v1": {
+		"title": "Restful doc",
+		"description": "Restful documentation base",
+		"host": "http://localhost/rest/api/v1",
+		"resources": {
+			"users": { "name": "Users", "source": "resources/users.json?v=1" }
+		}
+	}
+}

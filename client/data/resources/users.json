@@ -1,0 +1,60 @@
+{
+	"title": "Users",
+	"description": "User's REST API documentation",
+	"resources": [
+		{
+			"title": "Users list",
+			"description": "Get list of users",
+			"path": "/users",
+			"method": "GET",
+
+			"request": {
+				"headers": {},
+				"parameters": [
+					{ "name": "Since", "description": "Some extra parameter", "optional": false }
+				]
+			},
+			"response": {
+				"code": 200,
+				"headers": {
+					"Content-Type": "application/json"
+				},
+				"data": [
+					{
+						"id": "5c446f8a-d692-11e2-9cb4-6c626d3408e8",
+						"username": "drahak",
+						"avatar_url": "/files/avatar/5c446f8a-d692-11e2-9cb4-6c626d3408e8/avatar.jpg",
+						"user_url": "/users/5c446f8a-d692-11e2-9cb4-6c626d3408e8"
+					}
+				]
+			}
+		},
+
+		{
+			"title": "Users profile",
+			"description": "Get user profile",
+			"path": "/users/:id",
+			"method": "GET",
+
+			"request": {
+				"headers": {},
+				"parameters": []
+			},
+			"response": {
+				"code": 200,
+				"headers": {
+					"Content-Type": "application/json"
+				},
+				"data": {
+					"id": "5c446f8a-d692-11e2-9cb4-6c626d3408e8",
+					"skype": "drahomir.hanak",
+					"username": "drahak",
+					"email": "drahomir.hanak@gmail.com",
+					"facebook_id": "2000000025203060636203",
+					"avatar_url": "/files/avatar/5c446f8a-d692-11e2-9cb4-6c626d3408e8/avatar.jpg",
+					"user_url": "/users/5c446f8a-d692-11e2-9cb4-6c626d3408e8"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="cs-CZ"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="cs-CZ"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="cs-CZ"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="cs-CZ"> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8" />
+		<title>My SPA</title>
+
+		<script type="text/javascript" src="libs/closure-library/closure/goog/base.js"></script>
+		<script type="text/javascript" src="libs/angular/angular.min.js"></script>
+		<script type="text/javascript" src="libs/angular-resource/angular-resource.min.js"></script>
+		<script type="text/javascript" src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script type="text/javascript" src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script type="text/javascript" src="build/deps.js"></script>
+		<!-- Production -->
+		<!-- <script type="text/javascript" src="build/app.js"></script> -->
+		<script type="text/javascript">
+		goog.require('Restful.bootstrap');
+		</script>
+
+
+		<link rel="stylesheet" type="text/css" href="build/app.css" />
+		<style type="text/css">
+			[ng\:cloak], [ng-cloak], .ng-cloak {
+				display: none !important;
+			}
+		</style>
+	</head>
+	<body ng-controller="App">
+		<script type="text/javascript">
+			Restful.bootstrap();
+			// Because of e2e test runner
+			document.body.setAttribute('ng-app', 'Restful');
+		</script>
+
+		<div class="container">
+
+			<section ng-controller="ResourceList">
+				<div class="content pull-right">
+					<header class="hero-unit" ng-cloak>
+						<a href="#/">
+							<h1><i class="icon-file"></i> {{ api.title }}</h1>
+							<p class="muted">{{ api.description }}</p>
+						</a>
+					</header>
+					<div ng-view></div>
+				</div>
+				<div class="span3 sidebar">
+					<h3>Resources</h3>
+					<ul class="nav nav-stacked nav-tabs">
+						<li ng-repeat="(id, resource) in api.resources" ng-class="{'active': isCurrent('/resource/' + id)}" ng-cloak>
+							<a ng-href="#/resource/{{ id }}">{{ resource.name }}</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</section>
+
+			<footer class="text-center copyright">
+				&copy; 2013 <a href="http://www.drahak.eu" target="_blank" id="author">Drahomír Hanák</a>
+			</footer>
+		</div>
+
+	</body>
+</html>

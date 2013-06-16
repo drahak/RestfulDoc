@@ -1,0 +1,34 @@
+<section ng-controller="Resource">
+	<h1>{{ data.title }}</h1>
+	<p>{{ data.description }}</p>
+	<input type="text" ng-model="search" class="input-big" placeholder="Search {{data.title}} resource" />
+	<hr />
+
+	<section ng-repeat="resource in data.resources | filter:search" class="resource">
+
+		<!-- Resource header -->
+		<header ng-click="resource.show = !resource.show">
+			<pre class="path"><strong>{{resource.method}}</strong> {{resource.path}}</pre>
+			<h2><i class="icon-code muted"></i> {{resource.title}}</h2>
+		</header>
+
+		<!-- Resource detail -->
+		<div class="resource-content" ng-class="{'shown': resource.show}">
+			<p>{{resource.description}}</p>
+
+			<div ng-show="resource.request.parameters.length || resource.request.headers.length">
+				<h3><i class="icon-angle-right"></i> Request</h3>
+				<dl>
+					<div ng-repeat="parameter in resource.request.parameters">
+						<dt>{{parameter.name}}</dt>
+						<dd><span ng-show="!parameter.optional" class="muted">[REQUIRED]</span> {{parameter.description}}</dd>
+					</div>
+				</dl>
+			</div>
+
+			<h3><i class="icon-angle-left"></i> Response</h3>
+			<pre class="headers"><p>Status: {{resource.response.code}} {{statusCodes[resource.response.code]}}</p><p ng-repeat="(key, name) in resource.response.headers">{{key}}: {{name}}</p></pre>
+			<pre class="code">{{resource.response.data|json}}</pre>
+		</div>
+	</section>
+</section>
