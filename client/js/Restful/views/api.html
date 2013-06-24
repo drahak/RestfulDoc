@@ -1,0 +1,113 @@
+<section class="resource">
+	<div class="column-text">
+		<div class="view">
+			<h1>Drahak</h1>
+		</div>
+	</div>
+	<div class="column-code">
+		<div class="view">
+			<h1>Restful</h1>
+		</div>
+	</div>
+	<div class="column-code-holder"></div>
+
+	<div class="clearfix"></div>
+
+	<div class="hr-text"></div>
+	<div class="hr-code"></div>
+</section>
+
+<section class="resource">
+	<div class="column-text">
+		<div class="view">
+			<h2>Request content type</h2>
+			<p>API can provide you more then one response type for each resource. If you like to work with XML, just use XML. There available these Content-Types:</p>
+			<ul>
+				<li><strong>JSON</strong>: application/json</li>
+				<li><strong>JSONP</strong>: application/javascript</li>
+				<li><strong>XML</strong>: application/xml</li>
+				<li><strong>QUERY</strong>: application/x-www-form-urlencoded</li>
+				<li><strong>DATA_URL</strong>: application/x-data-url</li>
+			</ul>
+		</div>
+	</div>
+	<div class="column-code">
+		<div class="view">
+			<h3>Example request</h3>
+			<pre>GET /v1/resource/name HTTP/1.1
+Content-Type: <strong>application/xml</strong></pre>
+		</div>
+	</div>
+	<div class="column-code-holder"></div>
+
+	<div class="clearfix"></div>
+
+	<div class="hr-text"></div>
+	<div class="hr-code"></div>
+</section>
+
+<section class="resource">
+	<div class="column-text">
+		<div class="view">
+			<h2>Errors</h2>
+			<p>Errors are provided as any other resource in Restful library. Restful uses conventional HTTP response codes to indicate success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that resulted from the provided information (e.g. a required parameter was missing, a charge failed, etc.), and codes in the 5xx range indicate an error with API servers.</p>
+		</div>
+	</div>
+	<div class="column-code">
+		<div class="view">
+			<h3>Common used response codes:</h3>
+			<table class="table-code">
+				<tr>
+					<td class="column-small">200 OK</td>
+					<td>Response to a successful GET, PUT, PATCH or DELETE. Can also be used for a POST that doesn't result in a creation.</td>
+				</tr>
+				<tr>
+					<td class="column-small">201 Created</td>
+					<td>Response to a POST request which successfully created an entity. There should also be Location header with new entity endpoint.</td>
+				</tr>
+				<tr>
+					<td class="column-small">204 No Content</td>
+					<td>Response every time when response body is empty. API should response ith 204 only in case if you send POST request.</td>
+				</tr>
+				<tr>
+					<td class="column-small">400 Bad Request</td>
+					<td>Response when this request is malformed. For example API could not find correct parser for provided content type.</td>
+				</tr>
+				<tr>
+					<td class="column-small">401 Unauthorized</td>
+					<td>When client is not authorized, authorization header not provided or when request is unsecured (outside of SSL)</td>
+				</tr>
+				<tr>
+					<td class="column-small">403 Forbidden</td>
+					<td>When user is authenticated but has no permission to access this resource.</td>
+				</tr>
+				<tr>
+					<td class="column-small">404 Not Found</td>
+					<td>When non-existing resource is requested.</td>
+				</tr>
+				<tr>
+					<td class="column-small">405 Method Not Allowed</td>
+					<td>When an HTTP method is invalid (does not exist) for given resource name. In this case, API provides list of usable HTTP methods.</td>
+				</tr>
+				<tr>
+					<td class="column-small">410 Gone</td>
+					<td>When resource is no longer available (e.g. was moved or deleted). Error message could contain new resource location if resource still exists but with new name.</td>
+				</tr>
+				<tr>
+					<td class="column-small">415 Unprocessable entity</td>
+					<td>When validation errors appear when requesting resource. Response includes validation errors usualy under the <code>errors</code> key.</td>
+				</tr>
+				<tr>
+					<td class="column-small">429 Too Many Requests</td>
+					<td>When request is rejected due to client reaches rate limit for given time period.</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="column-code-holder"></div>
+
+	<div class="clearfix"></div>
+
+	<div class="hr-text"></div>
+	<div class="hr-code"></div>
+</section>

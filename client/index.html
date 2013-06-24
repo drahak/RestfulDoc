@@ -19,6 +19,8 @@
 		goog.require('Restful.bootstrap');
 		</script>
 
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" type="text/css" href="build/app.css" />
 		<style type="text/css">
 			[ng\:cloak], [ng-cloak], .ng-cloak {
@@ -36,29 +38,35 @@
 		<div class="container">
 
 			<section ng-controller="ResourceList">
-				<div class="content pull-right">
-					<header class="hero-unit" ng-cloak>
-						<a href="#/">
-							<h1><i class="icon-file"></i> {{ api.title }}</h1>
-							<p class="muted">{{ api.description }}</p>
-						</a>
-					</header>
-					<div ng-view></div>
-				</div>
-				<div class="span3 sidebar">
-					<h3>Resources</h3>
-					<ul class="nav nav-stacked nav-tabs">
-						<li ng-repeat="(id, resource) in api.resources" ng-class="{'active': isCurrent('/resource/' + id)}" ng-cloak>
-							<a ng-href="#/resource/{{ id }}">{{ resource.name }}</a>
-						</li>
-					</ul>
+
+				<div class="content pull-left">
+					<!-- Documentation menu -->
+					<div class="span3 sidebar">
+						<ul class="nav nav-list">
+
+							<li class="nav-header">API</li>
+							<li ng-class="{'active': isCurrent('/')}">
+								<a href="#/">Introduction</a>
+								<a href="#/api">About API</a>
+							</li>
+
+							<li class="nav-header">Resources</li>
+							<li ng-repeat="(id, resource) in api.resources" ng-class="{'active': isCurrent('/resource/' + id)}" ng-cloak>
+								<a ng-href="#/resource/{{ id }}">{{ resource.name }}</a>
+							</li>
+						</ul>
+						<footer class="text-center copyright">
+							&copy; 2013 <a href="http://www.drahak.eu" target="_blank" id="author">Drahomír Hanák</a>
+						</footer>
+					</div>
+
+					<div class="content-text">
+						<div ng-view></div>
+					</div>
+					<div class="content-code"></div>
 				</div>
 				<div class="clearfix"></div>
 			</section>
-
-			<footer class="text-center copyright">
-				&copy; 2013 <a href="http://www.drahak.eu" target="_blank" id="author">Drahomír Hanák</a>
-			</footer>
 		</div>
 
 	</body>

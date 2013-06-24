@@ -9,7 +9,9 @@
 			"method": "GET",
 
 			"request": {
-				"headers": {},
+				"headers": [
+					{ "name": "Authorization", "description": "Bearer 5as81ad81sd1v9sf9v1sv9f1v9s" }
+				],
 				"parameters": [
 					{ "name": "Since", "description": "Some extra parameter", "optional": false }
 				]
