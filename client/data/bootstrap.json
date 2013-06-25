@@ -5,7 +5,7 @@
 		"host": "http://localhost/rest/api/v1",
 		"version": "v1",
 		"resources": {
-			"users": { "name": "Users", "source": "resources/users.json" }
+			"users": { "name": "Users", "source": "resources/users.json?v=1" }
 		}
 	}
 }

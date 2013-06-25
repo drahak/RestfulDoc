@@ -104,12 +104,6 @@
 	-webkit-box-shadow: inset @arguments;
 }
 
-.inset-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
-	box-shadow: inset @arguments;
-	-moz-box-shadow: inset @arguments;
-	-webkit-box-shadow: inset @arguments;
-}
-
 // CSS3 transforms with easInOutBack
 .animate (@property: all, @duration: 300ms, easeInOutBack) {
 	-webkit-transition: @property @duration cubic-bezier(0.680, 0, 0.265, 1); /* older webkit */

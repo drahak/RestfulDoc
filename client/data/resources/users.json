@@ -9,11 +9,12 @@
 			"method": "GET",
 
 			"request": {
-				"headers": [
-					{ "name": "Authorization", "description": "Bearer 5as81ad81sd1v9sf9v1sv9f1v9s" }
-				],
+				"headers": {
+					"Authorization": "Bearer 5as81ad81sd1v9sf9v1sv9f1v9s"
+				},
 				"parameters": [
-					{ "name": "Since", "description": "Some extra parameter", "optional": false }
+					{ "name": "facebook", "type": "boolean", "description": "Selects users with facebook", "optional": true },
+					{ "name": "age", "type": "integer", "description": "Selects only users with given age or older", "optional": true }
 				]
 			},
 			"response": {
@@ -33,10 +34,60 @@
 		},
 
 		{
-			"title": "Users profile",
-			"description": "Get user profile",
+			"title": "Create user",
+			"description": "Create new user's account.",
+			"path": "/users",
+			"method": "POST",
+
+			"request": {
+				"headers": {
+					"Authorization": "Bearer 54as16as18cad8c1ad8v1ds8v1a8c1a6d"
+				},
+				"parameters": [
+					{ "name": "username", "description": "User name must be string from 3 to 80 characters", "type": "string" },
+					{ "name": "password", "description": "String containing min. 3 characters and 1 number", "type": "string" },
+					{ "name": "facebookId", "description": "Must be user's numeric facebook ID", "type": "integer" },
+					{ "name": "email", "description": "Must be an valid email address", "type": "string" }
+				]
+			},
+			"response": {
+				"code": 201,
+				"headers": {}
+			}
+		},
+
+		{
+			"title": "Delete user",
+			"description": "Delete user's account and all its activity.",
 			"path": "/users/:id",
-			"method": "GET",
+			"method": "DELETE",
+
+			"request": {
+				"headers": {},
+				"parameters": []
+			},
+			"response": {
+				"code": 200,
+				"headers": {
+					"Content-Type": "application/json"
+				},
+				"data": {
+					"id": "5c446f8a-d692-11e2-9cb4-6c626d3408e8",
+					"skype": "drahomir.hanak",
+					"username": "drahak",
+					"email": "drahomir.hanak@gmail.com",
+					"facebook_id": "2000000025203060636203",
+					"avatar_url": "/files/avatar/5c446f8a-d692-11e2-9cb4-6c626d3408e8/avatar.jpg",
+					"user_url": "/users/5c446f8a-d692-11e2-9cb4-6c626d3408e8"
+				}
+			}
+		},
+
+		{
+			"title": "Update user's email",
+			"description": "Update user's email.",
+			"path": "/users/:id",
+			"method": "PATCH",
 
 			"request": {
 				"headers": {},

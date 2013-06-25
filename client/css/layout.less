@@ -26,6 +26,7 @@ body, html {
 .sidebar {
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #ddd;
+	background: #f9f9f9;
 	padding: 0 10px;
 	margin: 0;
 	height: 100%;
@@ -87,7 +88,7 @@ body, html {
 		}
 
 		.hr-text {
-			display: block;
+			display: none;
 			background: #fff;
 			height: 1px;
 			border-bottom: 1px solid #eee;
@@ -107,8 +108,15 @@ body, html {
 
 		.view {
 			padding: 10px 25px;
+
+			&.view-head {
+				border-bottom: 1px solid fade(#999, 10%);
+				border-top: 1px solid fade(#999, 10%);
+				padding-bottom: 5px;
+			}
 		}
 	}
+
 }
 
 input.input-big {
@@ -121,42 +129,54 @@ input.input-big {
 
 .column-name {
 	width: 30%;
+	padding-right: 10px !important;
 }
 
 .column-small {
 	width: 25%;
 }
 
-.table-code td {
-	padding-left: 20px;
-	font-size: 0.9em;
-	color: #777;
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	padding: 5px 0;
-	vertical-align: top;
+.table-code {
+	width: 100%;
+
+	th {
+		text-align: right;
+	}
+
+	p {
+		line-height: 1em;
+	}
+
+	td, th {
+		border-top: none;
+		padding-left: 20px !important;
+		font-size: 0.9em;
+		color: #777;
+		font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+		padding: 5px 0;
+		vertical-align: top;
+	}
+
+	td {
+		padding-top: 9px;
+	}
 }
 
-.table {
+.column-text .table-code {
 
-	&.table-parameter {
+	th {
+		font-family: Monaco, Consolas, "Lucida Console", monospace;
+		font-size: 1.2em;
+		font-weight: 300;
 
-		tr:first-child {
-			border-top: 1px solid #eee;
+		span.name {
+			color: #333;
+			text-transform: uppercase;
 		}
+	}
 
-		th, td {
-			border: none;
-			border-bottom: 1px solid #eee;
-		}
-
-		td {
-			padding-left: 15px;
-		}
-
-		th {
-			background: #f9f9f9;
-		}
-
+	td {
+		font-family: 'Open Sans', sans-serif;
 	}
 }
 

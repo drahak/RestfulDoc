@@ -9,14 +9,17 @@
 	}
 
 	h3 {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 100;
+		font-size: 1.5em;
+	}
+
+	.column-code h3 {
 		font-size: 1.1em;
 		font-weight: normal;
 		font-family: Monaco, Consolas, "Lucida Console", monospace;
 		text-transform: uppercase;
 		margin: 0;
-	}
-
-	.column-code h3 {
 		color: #aaa;
 		text-shadow: 0 1px 1px #101315;
 	}
@@ -43,6 +46,23 @@
 
 	pre p {
 		line-height: 0.8em;
+	}
+
+	.method {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 1.3em;
+		float: left;
+		padding: 15px;
+		margin-top: 20px;
+		margin-right: 10px;
+		background: #f9f9f9;
+		color: #fff;
+
+		&.method-get { background: #256ab7; }
+		&.method-post { background: #8fbe00; }
+		&.method-put { background: #bf8517; }
+		&.method-patch { background: #bf8517; }
+		&.method-delete { background: #9b1e1c; }
 	}
 
 }

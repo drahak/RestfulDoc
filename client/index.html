@@ -42,11 +42,19 @@
 				<div class="content pull-left">
 					<!-- Documentation menu -->
 					<div class="span3 sidebar">
+						<div class="text-center">
+							<a href="http://www.drahak.eu" target="_blank">
+								<img src="images/logo.png" alt="Drahomír Hanák" width="200" />
+							</a>
+						</div>
+
 						<ul class="nav nav-list">
 
 							<li class="nav-header">API</li>
 							<li ng-class="{'active': isCurrent('/')}">
 								<a href="#/">Introduction</a>
+							</li>
+							<li ng-class="{'active': isCurrent('/api')}">
 								<a href="#/api">About API</a>
 							</li>
 
@@ -55,9 +63,6 @@
 								<a ng-href="#/resource/{{ id }}">{{ resource.name }}</a>
 							</li>
 						</ul>
-						<footer class="text-center copyright">
-							&copy; 2013 <a href="http://www.drahak.eu" target="_blank" id="author">Drahomír Hanák</a>
-						</footer>
 					</div>
 
 					<div class="content-text">

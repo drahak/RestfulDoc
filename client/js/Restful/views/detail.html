@@ -28,34 +28,44 @@
 
 		<div class="column-text">
 
-			<div class="view">
+			<div class="view view-head method-{{resource.method|lowercase}}">
 				<!-- Resource header -->
 				<header ng-click="resource.show = !resource.show">
-					<h2>{{resource.title}}</h2>
+					<div class="method method-{{resource.method|lowercase}}">{{resource.method}} <strong>{{resource.path}}</strong></div>
+					<div class="pull-right text-right">
+						<h2>{{resource.title}}</h2>
+						<p>{{resource.description}}</p>
+					</div>
+					<div class="clearfix"></div>
 				</header>
-				<p>{{resource.description}}</p>
+			</div>
+			<div class="view">
 
 				<div ng-show="resource.request.parameters.length">
 					<h3>Request parameters</h3>
-					<table class="table table-parameter">
-						<tbody>
+					<table class="table table-code">
 						<tr ng-repeat="parameter in resource.request.parameters">
-							<th class="column-name">{{parameter.name}}</th>
-							<td><span ng-show="!parameter.optional" class="muted">[REQUIRED]</span> {{parameter.description}}</td>
+							<th class="column-name">
+								<span class="muted">{{parameter.type}}</span>
+								<span class="name">{{parameter.name}}</span>
+							</th>
+							<td>
+								<p ng-show="parameter.optional"><strong>optional</strong></p>
+								<p>{{parameter.description}}</p>
+							</td>
 						</tr>
-						</tbody>
 					</table>
 				</div>
 
-				<div ng-show="resource.request.headers.length">
+				<div ng-show="resource.request.headers">
 					<h3>Request headers</h3>
-					<table class="table table-parameter">
-						<tbody>
-						<tr ng-repeat="header in resource.request.headers">
-							<th class="column-name">{{header.name}}</th>
-							<td><span ng-show="!header.optional" class="muted">[REQUIRED]</span> {{header.description}}</td>
+					<table class="table-code">
+						<tr ng-repeat="(header, value) in resource.request.headers">
+							<th class="column-name">{{header}}</th>
+							<td>
+								<p>{{value}}</p>
+							</td>
 						</tr>
-						</tbody>
 					</table>
 				</div>
 
