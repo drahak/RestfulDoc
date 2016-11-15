@@ -18,7 +18,7 @@ Actually you will only need to download [Node.js](http://nodejs.org/). NodeJS pr
 - **[AngularJS bootstrap](http://angular-ui.github.io/bootstrap/)** - implements TWB in angular way (downloaded using Bower)
 - **[Twitter Bootstrap](http://twitter.github.io/bootstrap/)** - makes it simple to build UI (downloaded using Bower)
 - **[Google Closure](https://developers.google.com/closure/)** - JavaScript framework by Google, see also [Google Closure Cheatsheet](http://www.closurecheatsheet.com/) (downloaded using Bower)
-- **[Jasmine](http://pivotal.github.io/jasmine/)** - realy awesome and easy-to-use BDD testing framework (downloaded by NPM)
+- **[Jasmine](https://jasmine.github.io/)** - realy awesome and easy-to-use BDD testing framework (downloaded by NPM)
 - **[Karma](http://karma-runner.github.io/)** - Jasmine (or whatever) test runner (downloaded using NPM)
 - **[Grunt](http://pivotal.github.io/jasmine/)** - JavaScript task runner (e.g. for compile LESS or Coffee scripts) (downloaded using NPM with all tasks)
 - **[CoffeeScript](http://coffeescript.org/)** - JavaScript syntax is not much pretty. That's why it's better to use something like CoffeeScript (see grunt task `coffe:app` in `Gruntfile.coffee`)
